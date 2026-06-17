@@ -1,0 +1,16 @@
+{
+  "index": "globalmedia",
+  "_source": ["url", "has_partner_brand", "sponsor_names"],
+  "query": {
+    "bool": {
+      "must": [
+        { "exists": { "field": "has_partner_brand" } },
+        { "exists": { "field": "sponsor_names" } }
+      ]
+    }
+  },
+  "output_prefix": "ins",
+  "output_dir": "csv_output",
+  "scroll_size": 1000,
+  "max_hits": 10000
+}

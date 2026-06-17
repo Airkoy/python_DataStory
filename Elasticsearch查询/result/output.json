@@ -1,0 +1,12 @@
+{
+    "total": 0,
+    "data": [],
+    "aggregations": {
+        "video_duration_histogram": {
+            "buckets": []
+        },
+        "publish_timestamp": {
+            "buckets": []
+        }
+    }
+}

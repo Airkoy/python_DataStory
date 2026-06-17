@@ -1,0 +1,29 @@
+GET ds-banyan-globalmedia-post-index-v3/_search
+{
+  "_source": ["id", "item_id", "user_item_id","site_id",  "url","data_source_ids","has_partner_brand","sponsor_names"],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "exists":{
+            "field":"has_partner_brand"
+          }
+        },
+        {
+          "exists":{
+            "field":"sponsor_names"
+          }
+        }
+
+      ]
+    }
+  },
+  "aggs": {
+    "NAME": {
+      "terms": {
+        "field": "site_name.raw",
+        "size": 10
+      }
+    }
+  }
+}

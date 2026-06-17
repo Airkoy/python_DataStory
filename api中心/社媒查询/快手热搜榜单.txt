@@ -1,0 +1,4 @@
+curl --location 'http://api.dc.datastory.com.cn/kuaishou/topic/topSearch' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: sl-session=/BZwNSYCEWoRctVP2/5FDg==' \
+--data-urlencode 'token=e7a4685c941137c475817a8110998fc0'

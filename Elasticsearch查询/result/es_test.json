@@ -1,0 +1,56 @@
+GET ['ds-banyan-tiktok-post-index-v3', 'ds-banyan-globalmedia-post-index-v3']/_search
+  {
+    "size": 10,
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "range": {
+              "video_duration": {
+                "gte": 20000,
+                "lte": 40000
+              }
+            }
+          },
+          {
+            "terms": {
+              "site_id": [
+                "1244369434"
+              ]
+            }
+          },
+          {
+            "range": {
+              "publish_timestamp": {
+                "gte": 20260101000000,
+                "lte": 20260604235959,
+                "time_zone": "+08:00",
+                "format": "yyyyMMddHHmmss"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "aggs": {
+      "video_duration_histogram": {
+        "histogram": {
+          "field": "video_duration",
+          "interval": 10000,
+          "min_doc_count": 1
+        }
+      },
+      "publish_timestamp": {
+        "date_histogram": {
+          "field": "publish_timestamp",
+          "interval": "year",
+          "order": {
+            "_key": "asc"
+          },
+          "format": "yyyy-MM-dd",
+          "time_zone": "+08:00",
+          "min_doc_count": 1
+        }
+      }
+    }
+  }

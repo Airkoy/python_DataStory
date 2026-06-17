@@ -1,0 +1,870 @@
+============================================================
+数说聚合 API 接口文档 - 创建任务 & 修改周期任务
+============================================================
+
+目 录
+------------------------------------------------------------
+一、数据搜索模块（/project/job/*）
+  1.1 创建任务
+  1.2 修改周期任务
+二、数据超市模块（/application/market/job/*）
+  2.1 创建任务
+  2.2 修改周期任务
+  2.3 数据超市支持的采集列表
+附录  URL 正则匹配规则
+
+
+============================================================
+第一部分：数据搜索模块
+============================================================
+
+------------------------------------------------------------
+1.1 创建任务
+------------------------------------------------------------
+
+基本信息
+  接口地址: POST https://dc.datastory.com.cn/project/job/add
+  请求协议: HTTPS
+  请求格式: application/x-www-form-urlencoded
+  响应格式: application/json
+  鉴权方式: Authorization 头（Bearer Token，通过登录接口获取）
+
+请求头
+  Authorization : Token (必填)
+  Content-Type  : application/json (必填)
+
+
+----------- 参数1. name (必填) -----------
+类型: string
+说明: 任务名称
+限制:
+  * 不可重复、不可为空
+  * 最多 60 个字符
+  * 仅支持: 数字、英文、中文、中划线(-)、下划线(_)
+
+----------- 参数2. sheetName (非必填) -----------
+类型: string
+说明: 文件夹名称，推荐传 "API任务"
+      不传则无法在数说聚合可视化界面查看 API 创建的任务
+      传入后可在指定文件夹下查看该任务
+
+----------- 参数3. jobType (必填) -----------
+类型: string
+说明: 固定传 "1"
+
+----------- 参数4. titTemplateId (非必填) -----------
+类型: number
+说明: ETL 模板 ID，一般不传
+
+----------- 参数5. searchCondition (必填) -----------
+类型: object (JSON字符串)
+说明: 数据采集条件
+
+  5.1 isFast (必填)
+      类型: string
+      取值: 0=存量数据(微博/微信/新闻/论坛推荐)
+           1=实时采集入库后获取(其他平台推荐)
+
+  5.2 startTime (必填)
+      类型: string
+      说明: 数据发表开始时间，时间戳(毫秒)
+
+  5.3 endTime (必填)
+      类型: string
+      说明: 数据发表结束时间，时间戳(毫秒)
+      限制: endTime - startTime 不超过 1 年
+
+  5.4 sentiments (必填)
+      类型: string
+      取值: 0(中性), 1(正面), -1(负面)，多个用逗号隔开
+      推荐: 0,1,-1
+
+  5.5 source (必填)
+      类型: string，多个来源用逗号隔开
+      取值:
+        weibo          = 微博
+        weixin         = 微信
+        forum          = 论坛
+        news           = 新闻
+        video          = 视频
+        blog           = 博客
+        qa             = 问答
+        ecom           = 电商
+        xiaohongshu    = 小红书
+        shortVideo     = 短视频
+        gameOfNewsForum = 游戏
+
+  5.6 keywordFields (必填)
+      类型: string，多个用逗号隔开
+      推荐: content,title
+      可选(注意平台限制):
+        content                   = 内容 (通用)
+        title                     = 标题 (通用)
+        audio_asr_content         = 音频识别 (微博/小红书/抖音/快手)
+        cover_ocr_content         = 封面OCR (新闻/论坛/微博/小红书/抖音/快手/B站)
+        video_highlight_content   = 花字识别 (微博/小红书/抖音/快手)
+        video_content             = 视频文本 (微博/小红书/抖音/快手)
+        commodity_title           = 带货标题 (仅抖音-视频主帖)
+        src_content               = 源内容 (仅微博)
+        src_cover_content         = 源内容封面 (仅微博)
+        src_audio_content         = 源内容音频 (仅微博)
+        src_highlight_content     = 源内容花字 (仅微博)
+        src_video_content         = 源视频文本 (仅微博)
+
+  ---- 按平台分组的 msgType/Site 参数 ----
+
+  5.7 微博
+      weiboMsgType (source含weibo时必填)
+        类型: string
+        取值: 1=主帖, 2=回帖, 0=主帖+回帖
+
+  5.8 微信: 无需额外 msgType
+
+  5.9 论坛 (source含forum)
+      forumSite: 指定站点时必填，多个用逗号隔开
+      forumMsgType (必填): 1=主帖, 2=回帖, 0=主帖+回帖 (默认1)
+
+  5.10 新闻 (source含news)
+      newsSite: 指定站点时必填，多个用逗号隔开
+      newsMsgType (必填): 1=主帖, 2=评论, 0=主帖+评论
+
+  5.11 电商 (source含ecom)
+      ecomSite: 京东=5, 天猫=10，指定站点时必填，多个用逗号隔开
+      ecomMsgType (必填): 1=商品, 2=评论 (默认1)
+
+  5.12 视频 (source含video)
+      videoSite: 哔哩哔哩=44, 优酷=32, 爱奇艺=47, 腾讯视频=35
+      videoMsgType (必填): 1=主帖, 2=评论, 0=主帖+评论 (默认1)
+
+  5.13 博客 (source含blog)
+      blogSite: 指定站点时必填，多个用逗号隔开
+
+  5.14 问答 (source含qa)
+      qaSite: 知乎=101944
+      qaMsgType (必填): 1=问题, 2=回答, 0=问题+回答 (默认1)
+
+  5.15 短视频 (source含shortVideo)
+      shortVideoSite: 抖音=1003583, 快手=1334510
+      shortVideoMsgType (必填): 1=主帖, 2=评论, 0=主帖+评论 (默认0)
+
+  5.16 小红书 (source含xiaohongshu)
+      xiaohongshuMsgType (必填): 1=笔记, 2=评论, 0=笔记+评论 (默认0)
+
+  5.17 应用商店 (source含appStore)
+      appStoreSite: 小米=2345434, oppo=2360260, vivo=2343373,
+                    googlePlay=2341891, 三星=2372138, 苹果=2372309
+      appStoreMsgType (必填): 1=主帖, 2=评论
+
+  5.18 crawlFetchConf (isFast=1时必填)
+      类型: object (JSON字符串)
+      说明: 微博/微信采集选用接口配置
+
+  5.19 帖子类型筛选 (非必填)
+      zhihuPostType: questions(提问), articles(文章), pins(想法)
+      douyinPostType: video#0(常规视频), video#1(广告视频),
+                      image#0(常规图文), image#1(广告图文)
+      kuaishouPostType: video#0(常规视频), image#0(常规图文)
+      bilibiliPostType: video(视频), dynamic(动态), article(专栏)
+      说明: 多个用逗号隔开
+
+  5.20 isAdMap (非必填)
+      类型: object (JSON字符串)
+      说明: 筛选是否广告，0=非广告, 1=是广告
+      示例: {"all":"0,1"} 或 {"weibo":"1","xiaohongshu":"0"}
+      支持key: all, news, forum, weibo, weixin, ecomCommunity,
+              appStore, xiaohongshu, shortVideo, ecom, video, qa, blog
+      传"all"时其他key不生效
+
+  5.21 interactionRangeMap (非必填)
+      类型: object (JSON字符串)
+      说明: 筛选互动量范围
+      格式: "1000-"=大于等于1000, "-100000"=0~100000(过滤空值),
+            "1000-100000"=1000~100000
+      支持key同isAdMap
+
+
+----------- 参数6. profiltersListStr (必填) -----------
+类型: array[object] (JSON字符串)
+说明: 分析对象配置表
+
+  6.1 name (必填)
+      类型: string，分析对象名称
+
+  6.2 keywords (必填)
+      类型: string
+      语法: "+"=且, "|"=或, "( )"=分组, "\\"转义特殊字符
+      示例: (雅诗兰黛|兰蔻)+(口红|粉底)
+      展开: 雅诗兰黛+口红 | 雅诗兰黛+粉底 | 兰蔻+口红 | 兰蔻+粉底
+      限制: 拆解后不超过200组
+
+  6.3 filterwords (非必填)
+      类型: string，语法同keywords，限制同上
+
+  6.4 账号ID
+      uid            = 微博UID (source必传weibo)
+      biz            = 微信biz (source必传weixin)
+      xhsAccId       = 小红书账号ID (source必传xiaohongshu)
+      biliAccId      = B站账号ID (source必传video, videoSite=44)
+      zhihuAccId     = 知乎账号ID (source必传qa, qaSite=101944)
+      svAccId        = 抖音账号ID (source必传shortVideo, shortVideoSite=1003583)
+      kuaiShouAccId  = 快手账号ID (source必传shortVideo, shortVideoSite=1334510)
+      wechatVideoUid = 微信视频号账号ID (source=shortVideo, shortVideoSite=25047925)
+      说明: 多个ID用英文逗号隔开
+
+
+----------- 参数7. schedule (必填) -----------
+类型: object (JSON字符串)
+说明: 任务调度配置
+
+  7.1 emails (必填)
+      类型: string
+      说明: 任务结果通知邮箱，多个用英文分号(;)隔开
+
+  7.2 isTemp (必填)
+      类型: string
+      取值: 1=一次性任务(endTime不晚于当前时间)
+           0=周期性任务(endTime不早于当前时间)
+
+  7.3 unit (必填)
+      类型: string
+      取值: d=每N天, M=每月N日
+      一次性任务固定传 "d"
+
+  7.4 interval (必填)
+      类型: string
+      说明: 采集时间间隔，如每1天传 "1"
+
+  7.5 startTime (非必填)
+      类型: string
+      说明: 任务启动时间，仅isTemp=1时生效
+            取用户输入与当前时间的较大值
+
+  7.6 startTimeOffset (非必填)
+      类型: number
+      说明: 延迟启动，控制每天任务启动时刻
+            获取微信数据建议传18，offsetUnit传"H" (防漏数)
+
+  7.7 offsetUnit (非必填)
+      类型: string
+      取值: H(小时), d(天)
+
+  7.8 searchUnitRange (非必填)
+      类型: number
+      说明: 取数时间范围
+            unit=H时默认48小时(最大48)
+            unit=d时默认interval+1天(最大2N天)
+
+  7.9 emailMode (非必填)
+      类型: number
+      取值: 0=成功且失败通知, 1=仅成功(默认), 2=仅失败, -1=不通知
+
+
+----------- 参数8. 导出地址 (ftp/es 二选一) -----------
+
+  8A. ftp (客户内部提供)
+      类型: array[object] (JSON字符串)
+      * account      (必填) FTP账户
+      * password     (必填) FTP密码
+      * host         (必填) FTP域名
+      * port         (必填) FTP端口
+      * filePath     (必填) 文件目录
+      * filename     (必填) 文件名
+      * type         (必填) ftp 或 sftp
+      * createNewFolder (非必填) 是否创建日期子目录 (boolean)
+      * fileFormat   (非必填) csv 或 json
+
+  8B. es (联系数说管理员提供)
+      类型: object (JSON字符串)
+      * host         (必填) 集群主机，如 dev4:9205:9305,dev5:9205:9305
+      * cluster      (必填) 集群名称，如 hermes_es_cluster
+      * indexName    (必填) 索引名
+      * typeName     (非必填) 类型名，不传自动生成
+
+
+----------- 参数9. matrix (非必填) -----------
+类型: object (JSON字符串)
+* projectId    (必填) 方舟项目ID
+* dirId        (非必填) 文件夹ID，不填默认根目录
+* datasourceName (必填) 数据源名称
+
+----------- 参数10. matrixAppend (非必填) -----------
+类型: object (JSON字符串)
+* matrixId     (必填) 方舟数据源关联ID
+
+----------- 参数11. hdfs (非必填) -----------
+类型: object (JSON字符串)
+* path         (非必填) 保存路径，默认 /projects/datastory/titan/hermes
+* fileFormat   (非必填) json/excel/csv，默认csv
+
+----------- 参数12. hive (非必填) -----------
+类型: object (JSON字符串)
+* host         (必填) [ip:port] 或 [域名:port]
+* database     (必填) 库名，需提前创建
+* tableName    (必填) 表名，已存在则覆盖
+* account      (非必填) 账号
+* password     (非必填) 密码
+
+----------- 参数13. oss (非必填) -----------
+类型: object (JSON字符串)
+* engineType   (必填) tencentcos 或 aliyunoss
+* connectId    (必填) 存储服务key (通过辅助接口获取)
+* fileName     (必填) 文件名
+* path         (必填) 导出路径，以/开头
+* fileFormat   (非必填) csv 或 json
+* otherConfig  (必填) JSON字符串
+  - bucketName (必填) 存储桶名称
+
+==========================================
+返回字段
+==========================================
+  success  boolean  请求是否成功
+  code     number   错误编码
+  data     number   创建成功的任务ID
+  message  string   提示信息
+
+
+==========================================
+请求示例（数据搜索模块-创建任务）
+==========================================
+
+POST /project/job/add HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=测试任务
+&sheetName=API任务
+&jobType=1
+&searchCondition={
+  "isFast":"1",
+  "startTime":"1700000000000",
+  "endTime":"1710000000000",
+  "source":"weibo,weixin",
+  "sentiments":"0,1,-1",
+  "keywordFields":"content,title",
+  "weiboMsgType":"0",
+  "forumMsgType":"1",
+  "newsMsgType":"1"
+}
+&profiltersListStr=[
+  {
+    "name":"分析对象1",
+    "keywords":"雅诗兰黛+口红",
+    "filterwords":"",
+    "uid":"",
+    "biz":"",
+    "xhsAccId":"",
+    "biliAccId":""
+  }
+]
+&schedule={
+  "emails":"user@example.com",
+  "isTemp":"1",
+  "unit":"d",
+  "interval":"1"
+}
+
+
+------------------------------------------------------------
+1.2 修改周期任务
+------------------------------------------------------------
+
+基本信息
+  接口地址: POST https://dc.datastory.com.cn/project/job/modify
+  请求格式: application/x-www-form-urlencoded
+  响应格式: JSON
+
+请求头
+  Authorization : Token (必填)
+
+
+----------- 参数1. id (必填) -----------
+类型: number
+说明: 要修改的任务ID
+
+----------- 参数2. titTemplateId (非必填) -----------
+类型: number，ETL模板ID
+
+----------- 参数3. searchCondition (必填) -----------
+类型: object (JSON字符串)
+注意: 开始时间(startTime)不可修改
+
+  3.1 endTime (必填)
+      类型: string，数据发表结束时间(毫秒)
+
+  3.2 isFast (必填)
+      同创建任务
+
+  3.3 source (必填)
+      同创建任务
+
+  3.4 keywordFields (必填)
+      同创建任务
+
+  3.5 siteLabel (非必填)
+      类型: string，多个用逗号隔开
+      说明: 等价于同时指定 source + xxxSite + xxxMsgType=1 + keywordFields=content,title
+            当显式输入对应参数时以显式输入为准，source和site自动合并
+
+  3.6 以下与创建任务相同:
+      forumSite, forumMsgType, newsSite, ecomSite, ecomMsgType,
+      videoSite, videoMsgType, blogSite, qaSite, qaMsgType,
+      shortVideoSite, shortVideoMsgType, xiaohongshuMsgType,
+      appStoreMsgType, appStoreSite,
+      gameOfNewsForumMsgType (只支持2=游戏评论)
+      gameOfNewsForumSite (TapTap=1003678, B站游戏=2372392, 好游快爆=25472383)
+
+----------- 参数4. profiltersListStr (必填) -----------
+类型: array[object] (JSON字符串)
+重要: 修改是覆盖操作！之前传3个对象现在传2个，则只跑这2个新的。
+字段同创建任务
+
+----------- 参数5. schedule (非必填) -----------
+类型: object (JSON字符串)
+  5.1 emailMode: 0/1/2/-1 同创建任务
+  5.2 emails: 同创建任务
+
+==========================================
+返回字段
+==========================================
+  success  boolean  请求是否成功
+  code     number   错误编码
+  data     object   返回数据
+  message  string   提示信息
+
+
+============================================================
+第二部分：数据超市模块
+============================================================
+
+------------------------------------------------------------
+2.1 创建任务
+------------------------------------------------------------
+
+基本信息
+  接口地址: POST https://dc.datastory.com.cn/application/market/job/v1/run
+  请求格式: application/json
+  响应格式: application/json
+  鉴权: Authorization: Token, Content-Type: application/json
+
+
+----------- 参数1. jobName (必填) -----------
+类型: string
+限制: 不可重复/为空，最多60字符，仅支持数字/英文/中文/中划线/下划线
+
+----------- 参数2. sheetId (非必填) -----------
+类型: number
+说明: 文件夹ID，不传无法在可视化界面查看
+
+----------- 参数3. appId (必填) -----------
+类型: number
+说明: 应用ID，见 2.3 采集列表
+
+----------- 参数4. scopeId (必填) -----------
+类型: number
+说明: 采集区域ID，见 2.3 采集列表
+
+----------- 参数5. titTemplateId (非必填) -----------
+类型: number，ETL工作流模板ID
+
+----------- 参数6. sourceConfig (必填) -----------
+类型: object
+
+  6.1 input (必填)
+      类型: string
+      取值:
+        keyword      = 关键词条件 (通用)
+        uid          = 用户UID条件 (见2.3)
+        topic        = 快手话题 / lofter
+        url          = 单帖URL (部分站点)
+        surl         = 单帖URL需解析 (部分站点)
+        field_tag    = 内容标签 (微博/快手/B站视频)
+        forum_name   = 贴吧名称 (百度贴吧)
+        forum_names  = 板块名称 (NGA论坛，一对多关系)
+        car_series   = 车系 (汽车之家/太平洋汽车网/易车网/爱卡汽车网/车质网)
+
+  6.2 matchType (非必填)
+      类型: array
+      说明: input=keyword 时关键词匹配字段
+      标准: content(内容), title(标题)
+      默认: ["content","title"]
+      特殊 (仅对应平台有效):
+        微博: src_content, cover_ocr_content, audio_asr_content,
+             video_highlight_content, video_content, src_cover_content,
+             src_audio_content, src_highlight_content, src_video_content
+        B站: video_labels, cover_ocr_content
+        小红书: cover_ocr_content, audio_asr_content,
+               video_highlight_content, cooperation_brand_labels, video_content
+        快手: audio_asr_content, cover_ocr_content,
+             video_highlight_content, video_content
+        微信视频号: cover_ocr_content
+        百度贴吧: forum_name
+
+  6.3 output (必填)
+      类型: array
+      取值: POST(主帖), COMMENT(评论), INTERACTION(互动量), USER(账号信息),
+            REPOST(转发-仅微博)
+      对应关系见 2.3 采集列表
+
+  6.4 isAd (非必填)
+      类型: string，0=非广告, 1=是广告
+
+  6.5 interactionRange (非必填)
+      类型: string
+      格式: "gte-lte"，如 "1000-100000"
+
+  6.6 crawlDatasourceIdMap (非必填)
+      类型: object
+      说明: 在线取数选定 (目前仅小红书在线更新互动量)
+      取值: 14=内容详情+互动量, 15=仅更新互动量
+      示例: {"INTERACTION":14}
+
+  6.7 condition (必填)
+      类型: array
+      每个元素包含以下字段:
+      * name (必填) 分析对象名，数组内不能重复
+      * keywords (input=keyword时必填) 关键词，语法同数据搜索模块
+      * filterwords (非必填) 过滤词
+      * uid (input=uid时必填) 多个用逗号隔开
+      * url (input=url时必填) 多个用逗号隔开，需匹配站点正则(见附录)
+      * biz (input=url且site=微信时必填) 多个用逗号隔开
+      * topic (input=topic时必填) 多个话题用逗号隔开
+      * content_mode (input=field_tag时选填) PGC/UGC/UKN
+      * interaction_cnt_range (input=field_tag时选填) 互动量范围
+      * car_series (input=car_series时必填) 多个用逗号隔开
+      * forum_name (input=forum_name时必填) 板块名称
+      * forum_names (input=forum_names时必填) 板块名称(NGA)
+      * match_type (input=field_tag时选填) 匹配文本，取值同matchType
+      * exists_field (input=field_tag时选填) 音图识别(仅快手):
+        cover_ocr_content, audio_asr_content
+
+
+----------- 参数7. scheduleConfig (必填) -----------
+类型: object
+
+  7.1 type (必填)
+      类型: string，取值: TEMP(临时), SIMPLE(周期)
+
+  7.2 startDataTime (必填)
+      类型: string，数据发表开始时间(毫秒)
+
+  7.3 endDataTime (必填)
+      类型: string，数据发表结束时间(毫秒)
+
+  7.4 schedStartTime (非必填)
+      类型: string，任务运行时间(毫秒)，仅TEMP时生效
+
+  7.5 commentDelay (非必填)
+      类型: number，评论更新时间(小时)，output含COMMENT时必填
+
+  7.6 commentDelayList (非必填)
+      类型: array，output含COMMENT且非url时必填
+      最多7个值，示例: [0,24,48,72,96,120,144]
+      注意: 权限控制参数，默认不支持
+
+  7.7 commentDelayUnit (非必填)
+      类型: string，d(日)或H(小时)，默认H
+
+  7.8 interactionDelay (非必填)
+      类型: number，互动量更新时间(小时)，output含INTERACTION时必填
+
+  7.9 interactionDelayList (非必填)
+      类型: array，output含INTERACTION且非url时必填
+      最多7个值，示例: [0,1,2,3,4,5,6]，单位天
+      注意: 权限控制参数
+
+  7.10 interactionDelayUnit (非必填)
+      类型: string，默认d(日)
+
+  7.11 useInteractionDefaultDelay (非必填)
+      类型: boolean，互动量默认更新
+      支持: 微博/微信/知乎/哔哩哔哩
+      不支持: input=url且type=SIMPLE
+      与 interactionDelay 二选一
+
+  7.12 interval (type=SIMPLE时必填)
+      类型: number，任务运行周期
+
+  7.13 unit (type=SIMPLE时必填)
+      类型: string，d(日)或M(月)
+
+  7.14 searchStartTime (非必填)
+      类型: number，取数时间间隔
+
+  7.15 searchUnit (非必填)
+      类型: string，d(日)或H(小时)
+
+
+----------- 参数8. exportConfig (必填) -----------
+类型: object
+说明: es/esAppend/matrix/matrixAppend 四选一
+
+  8A. ftp (非必填)
+      * filePath (必填) 文件路径
+      * filename (必填) 文件名
+      * fileFormat (非必填) csv/json
+      * id (必填) FTP地址ID
+
+  8B. es (与esAppend互斥)
+      * cluster (必填) 集群
+      * host (必填) 地址
+      * indexName (必填) 索引名
+      * typeName (必填) 类型名
+
+  8C. esAppend (与es互斥)
+      * jobId (必填) 聚合任务ID，数据追加到该任务
+
+  8D. matrix (与其他方式互斥)
+      * projectId (必填) 方舟项目ID
+      * dirId (非必填) 文件夹ID
+      * datasourceName (必填) 数据源名称
+
+  8E. matrixAppend (与其他方式互斥)
+      * matrixId (必填) 方舟数据源关联ID
+
+  8F. local (非必填): 导出到本地
+
+  8G. tencentcos (非必填)
+      * connectId (必填) 存储服务key
+      * fileName (必填) 文件名
+      * path (必填) 以/开头
+      * otherConfig (必填) JSON，含bucketName
+      * fileFormat (非必填) csv/json
+
+  8H. aliyunoss (非必填): 参数同tencentcos
+
+
+----------- 参数9. globalConfig (必填) -----------
+类型: object
+
+  9.1 email (必填)
+      类型: string，任务结束通知邮件
+
+  9.2 emailMode (必填)
+      类型: number
+      取值: 0=成功且失败通知, 1=仅成功通知, 2=仅失败通知
+
+  9.3 isRealTime (必填)
+      类型: object
+      取值: 0=快速取数(全量库), 1=在线取数(先爬虫再取)
+      示例: {"POST":1,"COMMENT":1}
+
+  9.4 isKeepTrend (非必填)
+      类型: boolean
+      说明: 是否保留趋势，type=SIMPLE时有效
+      默认: output为USER时true，其他false
+
+
+==========================================
+请求示例（数据超市模块-创建任务）
+==========================================
+
+POST /application/market/job/v1/run HTTP/1.1
+Content-Type: application/json
+
+{
+  "jobName": "测试任务",
+  "appId": 6,
+  "scopeId": 4,
+  "sourceConfig": {
+    "input": "keyword",
+    "matchType": ["content", "title"],
+    "output": ["POST", "COMMENT", "INTERACTION"],
+    "condition": [
+      {
+        "name": "分析对象1",
+        "keywords": "雅诗兰黛+口红"
+      }
+    ]
+  },
+  "scheduleConfig": {
+    "type": "TEMP",
+    "startDataTime": "1700000000000",
+    "endDataTime": "1710000000000"
+  },
+  "exportConfig": {},
+  "globalConfig": {
+    "email": "user@example.com",
+    "emailMode": 1,
+    "isRealTime": {"POST": 1, "COMMENT": 1}
+  }
+}
+
+
+------------------------------------------------------------
+2.2 修改周期任务
+------------------------------------------------------------
+
+基本信息
+  接口地址: POST https://dc.datastory.com.cn/application/market/job/reset
+  请求格式: application/json
+  响应格式: application/json
+
+请求头
+  Authorization : Token (必填)
+
+
+----------- 参数1. id (必填) -----------
+类型: number
+说明: 要修改的周期任务ID
+
+----------- 参数2. titTemplateId (非必填) -----------
+类型: number，ETL模板ID
+
+----------- 参数3. updateModule (必填) -----------
+类型: object
+  updateProfiler    (非必填,默认false) 更新采集输入
+  updateSchedule    (非必填,默认false) 更新采集周期
+  updateFermentation (非必填,默认false) 更新发酵配置
+  updateEmail       (非必填,默认false) 更新通知配置
+
+----------- 参数4. sourceConfig (必填) -----------
+(*当updateProfiler=true时此对象及属性必填)
+
+  4.1 input (必填)
+      类型: string，需与原任务一致
+      不支持: surl, shop_url, crowd_attributes
+      支持: keyword, uid, topic(快手), topic_url,
+            url(哔哩哔哩游戏/TapTap), field_tag(微博/快手/B站视频)
+
+  4.2 matchType (非必填) 同创建任务
+  4.3 output (必填) 同创建任务
+  4.4 condition (updateProfiler=true时必填) 同创建任务
+
+----------- 参数5. scheduleConfig (必填) -----------
+(*当updateSchedule=true时此对象及属性必填)
+
+  5.1 type (必填) SIMPLE (TEMP不支持修改)
+  5.2 endDataTime (updateSchedule=true时必填) 可延长结束时间
+  5.3 commentDelay: 评论更新时间
+  5.4 interactionDelay: 互动量更新时间 (与useInteractionDefaultDelay二选一)
+  5.5 useInteractionDefaultDelay: 互动量默认更新
+
+----------- 参数6. globalConfig (必填) -----------
+(*当updateEmail=true时生效)
+  email (必填) 通知邮件
+  emailMode (必填) 0/1/2
+
+
+============================================================
+2.3 数据超市支持的采集列表
+============================================================
+
+---- 微博 ----
+appId=6  scopeId=4
+keyword: POST, INTERACTION, COMMENT (POST必填)
+uid: POST, INTERACTION, COMMENT, USER
+surl: POST, INTERACTION, COMMENT, REPOST, LIKE (POST必填)
+
+---- 微信公众号 ----
+appId=7  scopeId=10
+keyword/uid: POST, INTERACTION (POST必填)
+surl: POST, INTERACTION (均必填)
+
+---- 小红书 ----
+appId=13  scopeId=11
+keyword: POST, INTERACTION, COMMENT (POST必填)
+uid: POST, INTERACTION, COMMENT, USER (非账号信息时POST必填)
+surl: POST, INTERACTION, COMMENT (POST必填)
+
+---- 抖音 ----
+appId=8  scopeId=7
+POST类型: POST-image#0(常规图文), POST-video#0(常规视频),
+          POST-image#1(广告图文), POST-video#1(广告视频)
+keyword: POST类型至少传其一 + INTERACTION + COMMENT
+uid: USER + (非账号信息时POST至少传其一 + INTERACTION + COMMENT)
+surl: POST(必填) + INTERACTION + COMMENT
+
+---- 快手 ----
+appId=12  scopeId=6
+POST类型: POST-image#0(常规图文), POST-video#0(常规视频)
+keyword: POST类型至少传其一 + INTERACTION + COMMENT
+uid: USER + (非账号信息时POST至少传其一 + INTERACTION + COMMENT)
+surl: POST(必填) + INTERACTION + COMMENT
+
+---- 微信视频号 ----
+appId=70  scopeId=50
+keyword: POST, INTERACTION, COMMENT (POST必填)
+uid: USER, POST, INTERACTION, COMMENT (非账号信息时POST必填)
+surl: 无
+
+---- 哔哩哔哩-视频 ----
+appId=14  scopeId=9
+keyword/uid: POST, INTERACTION, COMMENT-0, COMMENT-1(弹幕), USER
+surl: POST(必填), INTERACTION, COMMENT-0, COMMENT-1(弹幕)
+注意: 有commentDelay时COMMENT-0=主帖评论，无则为仅评论
+
+---- 哔哩哔哩-动态 ----
+appId=14  scopeId=56
+output: POST, INTERACTION, COMMENT-0
+surl额外: COMMENT(仅评论)
+注意: 有commentDelay时COMMENT-0=主帖评论，否则COMMENT=仅评论
+
+---- 哔哩哔哩-专栏 ----
+appId=14  scopeId=69
+output: POST, INTERACTION, COMMENT
+注意: 有commentDelay时COMMENT=主帖评论，否则=仅评论
+
+---- 知乎 ----
+appId=10  scopeId=8
+POST类型: POST_answers(回答), POST_questions(问题),
+          POST_articles(文章), POST_pins(想法), POST_zvideo(视频)
+keyword: POST类型至少传其一 + INTERACTION + COMMENT
+uid: USER + (非账号信息时POST至少传其一 + INTERACTION + COMMENT)
+
+---- 懂车帝 ----
+口碑(appId=53,scopeId=38) / 论坛(appId=53,scopeId=43) / 新闻(appId=53,scopeId=54)
+output: POST(必填), INTERACTION, COMMENT
+
+---- 汽车之家 ----
+口碑(appId=15,scopeId=12) / 论坛(appId=15,scopeId=39) / 新闻(appId=15,scopeId=51)
+output: POST(必填), INTERACTION, COMMENT
+
+---- 百度贴吧 ----
+keyword: input=forum_name
+output: POST, COMMENT
+
+
+============================================================
+附录：URL 正则匹配规则
+============================================================
+
+B站:
+  https://www.bilibili.com/video/(av\d+|BV[0-9a-z]+)
+
+豆瓣小组:
+  https://www.douban.com/group/topic/\d+
+
+豆瓣电影/电视剧:
+  https://movie.douban.com/subject/\d+
+
+微博:
+  https?://weibo\.com/\d+
+
+微信:
+  https://mp.weixin.qq.com/s.*(biz=.+|mid=.+|idx=.+|sn=.+){4}
+
+小红书:
+  https://www.xiaohongshu.com/discovery/item/\w+
+
+知乎:
+  https://(zhuanlan.zhihu.com/p/\d+|www.zhihu.com/question/\d+)
+
+苹果应用商店:
+  https?://apps.apple.com/cn/app/id\\d+
+
+电商商品URL:
+  天猫: ^https?://detail(\.m)?\.tmall\.com\/item\.html?\?.*id=\d+
+  淘宝: ^https?://(item.taobao.com/item.html?\?id=\d+|a.m.taobao.com/i\d+.html?)
+  京东: ^https?://.*item.jd.[^\/]+/.*\d+.html?
+  苏宁: ^https?://product.suning.com/\d+/\d+.html?
+  网易考拉: ^https?://\w+.kaola.com(.\w+)?/product/\d+(\.html)?
+  唯品会: ^https?://detail.vip.com/detail-\d+-\d+.html?
+
+电商店铺URL:
+  天猫: ^https?://(?!chaoshi)\w+(\.m)?\.tmall\..+
+        ^https?://shop\d+.m.tmall.com
+        ^https?://shop\d+.m.taobao.com
+  淘宝: ^https?://shop\d+.m.taobao.com
+  京东: ^https?:\/\/mall\.jd\..+?\/(index-\d+|view_search[\d-]+)\.html?
+  苏宁: ^https?://.+.suning.com
+  网易考拉: ^https?:\/\/k?mall\.kaola\.com(/(pc|app))?/\d+
+  唯品会: ^https?://list.vip.com/brand.html?\?sn=\d+

@@ -1,0 +1,12 @@
+
+
+
+       聚合中文    聚合英文          全量库-主贴        备注
+标题    标题       title            title
+内容    内容       content          content
+语言    语言       language         language
+国家地区 国家地区    post_country     userIpLocation
+互动量   互动量     interaction_cnt  /               通过计算得到，分鹰角公式/全量库公式（不确定需不需要按账号区分）
+                                                  互动量公式，影响趋势图切互动量的可选字段
+数据类型 数据类型    data_type        /               聚合定义的，tiktok-海外短视频，ins-instagram
+情感    情感       sentiment        待开发            有可能延期

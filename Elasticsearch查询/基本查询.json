@@ -1,0 +1,17 @@
+{
+  "sense地址": "http://172.18.5.54:5601/app/sense",
+  "es地址": {
+    "国内": "https://es-banyan-new.datastory.com.cn",
+    "海外-全量库": "https://es-banyan-global.datastory.com.cn"
+  },
+  "账密": {
+    "username": "banyan-custom",
+    "password": "banyan-custom-zxcv"
+  },
+  "index": {
+    "tiktok": "ds-banyan-tiktok-post-index-v3",
+    "X": "ds-banyan-twitter-post-index-v3",
+    "海外新闻论坛（其他海外站点）": "ds-banyan-globalnewsforum-post-index-v3",
+    "海外社媒(ins/youtube/facebook/reddit)":"ds-banyan-globalmedia-post-index-v3"
+  }
+}

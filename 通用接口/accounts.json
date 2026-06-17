@@ -1,0 +1,22 @@
+{
+    "koy账号": {
+        "username": "koy@datastory.com.cn",
+        "password": "Air160630",
+        "description": "主账号"
+    },
+    "agc账号": {
+        "username": "agc215684@163.com",
+        "password": "agc215684",
+        "description": "新架构账号"
+    },
+    "admin账号": {
+        "username": "hermes_admin@datastory.com.cn",
+        "password": "hSm8W2MmuHy?J@!NzM2T",
+        "description": "管理员账号"
+    },
+    "xsignal_dev": {
+        "username": "xsignal_dev@datastory.com.cn",
+        "password": "x123456",
+        "description": "devtest"
+    }
+}

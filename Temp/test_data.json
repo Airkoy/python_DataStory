@@ -1,0 +1,1336 @@
+[
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall1058973128_2923",
+        "_score": 2.4206083,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "sv",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-194693100_194",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776693240608,
+                "first_update_date": 1776693240608,
+                "video_urls":
+                [],
+                "es_time": 1776693240608,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Spits Juck Haval reals. \nИринин шпиц Саймон 💘💘💘🗄🗃🧯"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776693240608,
+            "is_cultural": false,
+            "id": "wall1058973128_2923",
+            "content_len": 56,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall1058973128_2923",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "Anna Zemtsova",
+                "user_name": "Anna Zemtsova",
+                "language": "sv",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "Anna Zemtsova",
+                "id": "82073|1058973128",
+                "user_note_tags":
+                [],
+                "username_text": "Anna Zemtsova",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/id1058973128",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "1058973128",
+                "first_update_timestamp": 1776693240608,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776693240608,
+                "es_time": 1776693240608
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-18 05:17:59 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776460679000,
+            "update_date": 1776693240608,
+            "url": "https://vk.com/feed?w=wall1058973128_2923",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776474746397,
+            "interaction":
+            {
+                "view_cnt": 23,
+                "sum_cnt": 24,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                },
+                "like_cnt": 1
+            },
+            "site_id": 82073,
+            "first_update_date": 1776474746397,
+            "es_time": 1776693240608,
+            "publish_date": 1776460679000,
+            "idCreateEntity":
+            {},
+            "rowKey": "eccb5b8b620ed3b50a986065b8f5ee72",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall661406310_34833",
+        "_score": 2.420085,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-16202769_8315424",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776753962525,
+                "first_update_date": 1776753962525,
+                "video_urls":
+                [],
+                "es_time": 1776753962525,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Хоккей КХЛ Кубок Гагарина 1/4\nТорпедо НН - Металлург МГ 3:2 Овртайм"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776753962525,
+            "is_cultural": false,
+            "id": "wall661406310_34833",
+            "content_len": 67,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall661406310_34833",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "Dmitry Kosolapov",
+                "user_name": "Dmitry Kosolapov",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "Dmitry Kosolapov",
+                "id": "82073|661406310",
+                "user_note_tags":
+                [],
+                "username_text": "Dmitry Kosolapov",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/id661406310",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "661406310",
+                "first_update_timestamp": 1776753962525,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776753962525,
+                "es_time": 1776753962525
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-16 03:54:43 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776282883000,
+            "update_date": 1776753962525,
+            "url": "https://vk.com/feed?w=wall661406310_34833",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776288402094,
+            "interaction":
+            {
+                "view_cnt": 1,
+                "sum_cnt": 1,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                }
+            },
+            "site_id": 82073,
+            "first_update_date": 1776288402094,
+            "es_time": 1776753962525,
+            "publish_date": 1776282883000,
+            "idCreateEntity":
+            {},
+            "rowKey": "c1c13d0d52b0f2bf604c8c356b28cd90",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall-218012688_1395",
+        "_score": 2.4173481,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-31635757_2667319",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776757959955,
+                "first_update_date": 1776757959955,
+                "video_urls":
+                [],
+                "es_time": 1776757959955,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "делимся с вами свежим обзором на JAECOO J6"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776757959955,
+            "is_cultural": false,
+            "id": "wall-218012688_1395",
+            "content_len": 42,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall-218012688_1395",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "OMODA&JAECOO Никко Тюмень | Официальный дилер",
+                "user_name": "OMODA&JAECOO Никко Тюмень | Официальный дилер",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "OMODA&JAECOO Никко Тюмень | Официальный дилер",
+                "id": "82073|218012688",
+                "user_note_tags":
+                [],
+                "username_text": "OMODA&JAECOO Никко Тюмень | Официальный дилер",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/omoda.jaecoo.nikko",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "218012688",
+                "first_update_timestamp": 1776757959955,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776757959955,
+                "es_time": 1776757959955
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-13 20:31:38 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776083498000,
+            "update_date": 1776757959955,
+            "url": "https://vk.com/feed?w=wall-218012688_1395",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776117036111,
+            "interaction":
+            {
+                "view_cnt": 62,
+                "sum_cnt": 64,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                },
+                "like_cnt": 2
+            },
+            "site_id": 82073,
+            "first_update_date": 1776117036111,
+            "es_time": 1776757959955,
+            "publish_date": 1776083498000,
+            "idCreateEntity":
+            {},
+            "rowKey": "da7d9b4a9661c251f8efd5d5e1c04bc4",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall-224852968_209",
+        "_score": 2.4168868,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-220122055_48874",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776759548622,
+                "first_update_date": 1776759548622,
+                "video_urls":
+                [],
+                "es_time": 1776759548622,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Хотели узнать больше о T2? Смотрите стрим в 14:00 вместе с нами."
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776759548622,
+            "is_cultural": false,
+            "id": "wall-224852968_209",
+            "content_len": 64,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall-224852968_209",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "JETOUR Автомир Москва",
+                "user_name": "JETOUR Автомир Москва",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "JETOUR Автомир Москва",
+                "id": "82073|224852968",
+                "user_note_tags":
+                [],
+                "username_text": "JETOUR Автомир Москва",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/jetour_avtomir_msk",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "224852968",
+                "first_update_timestamp": 1776759548622,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776759548622,
+                "es_time": 1776759548622
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-14 15:24:16 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776151456000,
+            "update_date": 1776759548622,
+            "url": "https://vk.com/feed?w=wall-224852968_209",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776156709661,
+            "interaction":
+            {
+                "reactor":
+                {
+                    "sum_cnt": 0
+                },
+                "view_cnt": 8,
+                "sum_cnt": 9,
+                "like_cnt": 1
+            },
+            "site_id": 82073,
+            "first_update_date": 1776156709661,
+            "es_time": 1776759548622,
+            "publish_date": 1776151456000,
+            "idCreateEntity":
+            {},
+            "rowKey": "4df3841d823093e5a666bf39e0eee59c",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall-236857880_5",
+        "_score": 2.4152756,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-219649612_165430",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776757590449,
+                "first_update_date": 1776757590449,
+                "video_urls":
+                [],
+                "es_time": 1776757590449,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Пройдите тест-драйв и получите шанс выиграть путешествие в Сочи!"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776757590449,
+            "is_cultural": false,
+            "id": "wall-236857880_5",
+            "content_len": 64,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall-236857880_5",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "OMODA | JAECOO  Армада-Авто Ульяновск",
+                "user_name": "OMODA | JAECOO  Армада-Авто Ульяновск",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "OMODA | JAECOO  Армада-Авто Ульяновск",
+                "id": "82073|236857880",
+                "user_note_tags":
+                [],
+                "username_text": "OMODA | JAECOO  Армада-Авто Ульяновск",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/omoda_jaecoo73",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "236857880",
+                "first_update_timestamp": 1776757590449,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776757590449,
+                "es_time": 1776757590449
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-17 15:55:54 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776412554000,
+            "update_date": 1776757590449,
+            "url": "https://vk.com/feed?w=wall-236857880_5",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776432943444,
+            "interaction":
+            {
+                "view_cnt": 72,
+                "sum_cnt": 72,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                }
+            },
+            "site_id": 82073,
+            "first_update_date": 1776432943444,
+            "es_time": 1776757590449,
+            "publish_date": 1776412554000,
+            "idCreateEntity":
+            {},
+            "rowKey": "f557615278684d0d0d46bc48c84ac1fb",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall-205101217_83618",
+        "_score": 2.414967,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "et",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-46890227_31236",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776171044352,
+                "first_update_date": 1776171044352,
+                "video_urls":
+                [],
+                "es_time": 1776171044352,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Подписывайтесь на Haval Club https://vk.ru/havalautoclub"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776171044352,
+            "is_cultural": false,
+            "id": "wall-205101217_83618",
+            "content_len": 56,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall-205101217_83618",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "Haval Jolion Club | Хавал Джолион Клуб",
+                "user_name": "Haval Jolion Club | Хавал Джолион Клуб",
+                "language": "et",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "Haval Jolion Club | Хавал Джолион Клуб",
+                "id": "82073|205101217",
+                "user_note_tags":
+                [],
+                "username_text": "Haval Jolion Club | Хавал Джолион Клуб",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/jolionclub",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "205101217",
+                "first_update_timestamp": 1776171044352,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776171044352,
+                "es_time": 1776171044352
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-13 21:24:56 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776086696000,
+            "update_date": 1776171044352,
+            "url": "https://vk.com/feed?w=wall-205101217_83618",
+            "involve_url":
+            [
+                "https://vk.ru/havalautoclub"
+            ],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776093019775,
+            "interaction":
+            {
+                "view_cnt": 865,
+                "sum_cnt": 868,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                },
+                "like_cnt": 2,
+                "repost_cnt": 1
+            },
+            "site_id": 82073,
+            "first_update_date": 1776093019775,
+            "es_time": 1776171044352,
+            "publish_date": 1776086696000,
+            "idCreateEntity":
+            {},
+            "rowKey": "0e4e557d5b91dae2a3273f7ba1dc7cd5",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall-220025167_1018",
+        "_score": 2.414967,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-213366890_139691",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776757518683,
+                "first_update_date": 1776757518683,
+                "video_urls":
+                [],
+                "es_time": 1776757518683,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Друзья, регистрируйтесь, выбирайте ААА Моторс, приезжайте, тестируйте великолепные кроссоверы и выигрывайте! ✨"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776757518683,
+            "is_cultural": false,
+            "id": "wall-220025167_1018",
+            "content_len": 110,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall-220025167_1018",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "OMODA & JAECOO | ААА Моторс Доватора",
+                "user_name": "OMODA & JAECOO | ААА Моторс Доватора",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "OMODA & JAECOO | ААА Моторс Доватора",
+                "id": "82073|220025167",
+                "user_note_tags":
+                [],
+                "username_text": "OMODA & JAECOO | ААА Моторс Доватора",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/omoda_jaecoo_zapad",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "220025167",
+                "first_update_timestamp": 1776757518683,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776757518683,
+                "es_time": 1776757518683
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-18 14:12:33 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776492753000,
+            "update_date": 1776757518683,
+            "url": "https://vk.com/feed?w=wall-220025167_1018",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776499925995,
+            "interaction":
+            {
+                "view_cnt": 11,
+                "sum_cnt": 11,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                }
+            },
+            "site_id": 82073,
+            "first_update_date": 1776499925995,
+            "es_time": 1776757518683,
+            "publish_date": 1776492753000,
+            "idCreateEntity":
+            {},
+            "rowKey": "cc030f2768359d2268ee26f91e74e237",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall182215424_1661",
+        "_score": 2.4148178,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-227011397_727",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776668681892,
+                "first_update_date": 1776668681892,
+                "video_urls":
+                [],
+                "es_time": 1776668681892,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Пришло время обозревать мой HAVAL H7"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776668681892,
+            "is_cultural": false,
+            "id": "wall182215424_1661",
+            "content_len": 36,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall182215424_1661",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "Alexander Snytkin",
+                "user_name": "Alexander Snytkin",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "Alexander Snytkin",
+                "id": "82073|182215424",
+                "user_note_tags":
+                [],
+                "username_text": "Alexander Snytkin",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/id182215424",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "182215424",
+                "first_update_timestamp": 1776668681892,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776668681892,
+                "es_time": 1776668681892
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-18 20:33:13 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776515593000,
+            "update_date": 1776668681892,
+            "url": "https://vk.com/feed?w=wall182215424_1661",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776524327919,
+            "interaction":
+            {
+                "view_cnt": 254,
+                "sum_cnt": 255,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                },
+                "like_cnt": 1
+            },
+            "site_id": 82073,
+            "first_update_date": 1776524327919,
+            "es_time": 1776668681892,
+            "publish_date": 1776515593000,
+            "idCreateEntity":
+            {},
+            "rowKey": "7af09212b108876bedeaa4d2c119347c",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall516208520_5",
+        "_score": 2.4144955,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "is_short_text": true,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "so",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall595091165_423",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776766030224,
+                "first_update_date": 1776766030224,
+                "video_urls":
+                [],
+                "es_time": 1776766030224,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "جيood"
+            },
+            "involve_places":
+            [],
+            "is_pure_symbol": false,
+            "update_timestamp": 1776766030224,
+            "is_cultural": false,
+            "id": "wall516208520_5",
+            "content_len": 5,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall516208520_5",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "Mohr Kh",
+                "user_name": "Mohr Kh",
+                "language": "so",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "Mohr Kh",
+                "id": "82073|516208520",
+                "user_note_tags":
+                [],
+                "username_text": "Mohr Kh",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/id516208520",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "516208520",
+                "first_update_timestamp": 1776766030224,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776766030224,
+                "es_time": 1776766030224
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-15 06:03:47 +0800",
+            "is_pure_number": false,
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776204227000,
+            "update_date": 1776766030224,
+            "url": "https://vk.com/feed?w=wall516208520_5",
+            "involve_url":
+            [],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776766030325,
+            "interaction":
+            {
+                "view_cnt": 2,
+                "sum_cnt": 2,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                }
+            },
+            "site_id": 82073,
+            "first_update_date": 1776766030325,
+            "es_time": 1776766030224,
+            "publish_date": 1776204227000,
+            "idCreateEntity":
+            {},
+            "rowKey": "ea9e6c2a68e28e1dd7bb17369fbea78d",
+            "is_pure_emoji": false
+        }
+    },
+    {
+        "_index": "dt-eagle-post_v4_2026_w16",
+        "_id": "wall-3643602_958254",
+        "_score": 2.4135332,
+        "_source":
+        {
+            "sentiment": 0,
+            "repost_level": 1,
+            "is_interact": false,
+            "item_type": "repost",
+            "is_oversea": true,
+            "language": "ru",
+            "is_robot": false,
+            "retweeted_post":
+            {
+                "sentiment": 0,
+                "mention_users":
+                [],
+                "repost_level": -1,
+                "is_interact": false,
+                "has_publish_date": true,
+                "task_ids":
+                [],
+                "url": "https://vk.com/feed?w=wall-8752416_11845",
+                "involve_url":
+                [],
+                "involve_places":
+                [],
+                "is_cultural": false,
+                "first_update_timestamp": 1776326735559,
+                "first_update_date": 1776326735559,
+                "video_urls":
+                [],
+                "es_time": 1776326735559,
+                "idCreateEntity":
+                {}
+            },
+            "title":
+            {},
+            "content":
+            {
+                "wordsENN": "Запчасти для твоего GW Hover https://vk.ru/vmshop4x4"
+            },
+            "involve_places":
+            [],
+            "update_timestamp": 1776326735559,
+            "is_cultural": false,
+            "id": "wall-3643602_958254",
+            "content_len": 52,
+            "domain_secondary": "vk.com",
+            "mention_users":
+            [],
+            "item_id": "wall-3643602_958254",
+            "author":
+            {
+                "media_site_type": "其他",
+                "gender": "未知",
+                "site_type": "新闻",
+                "nickname_text": "Hover - Haval H5 Club | Ховер Клуб | Great Wall",
+                "user_name": "Hover - Haval H5 Club | Ховер Клуб | Great Wall",
+                "language": "ru",
+                "we_media_attribute": "一般用户",
+                "site_type_secondary": "其它新闻",
+                "user_type": 1,
+                "nickname": "Hover - Haval H5 Club | Ховер Клуб | Great Wall",
+                "id": "82073|3643602",
+                "user_note_tags":
+                [],
+                "username_text": "Hover - Haval H5 Club | Ховер Клуб | Great Wall",
+                "org_attribute_type": "其他媒体",
+                "hobby_tags":
+                [],
+                "data_source":
+                {
+                    "from_code": "26",
+                    "from_channel": "vkPost"
+                },
+                "ip_location":
+                {},
+                "url": "https://vk.com/howerclub",
+                "site_name": "vk",
+                "is_celebrity": false,
+                "user_kol_types":
+                [],
+                "user_id": "3643602",
+                "first_update_timestamp": 1776326735559,
+                "site_id": 82073,
+                "org_attribute": "其他新闻",
+                "first_update_date": 1776326735559,
+                "es_time": 1776326735559
+            },
+            "has_publish_date": true,
+            "site_place":
+            {
+                "country": "俄罗斯"
+            },
+            "publish_date_str": "2026-04-15 20:29:15 +0800",
+            "task_ids":
+            [],
+            "data_source":
+            {
+                "from_code": "26",
+                "from_channel": "vkPost"
+            },
+            "publish_timestamp": 1776256155000,
+            "update_date": 1776326735559,
+            "url": "https://vk.com/feed?w=wall-3643602_958254",
+            "involve_url":
+            [
+                "https://vk.ru/vmshop4x4"
+            ],
+            "site_name": "vk",
+            "exposure": -1,
+            "domain": "vk.com",
+            "first_update_timestamp": 1776285647732,
+            "interaction":
+            {
+                "view_cnt": 476,
+                "sum_cnt": 482,
+                "reactor":
+                {
+                    "sum_cnt": 0
+                },
+                "like_cnt": 6
+            },
+            "site_id": 82073,
+            "first_update_date": 1776285647732,
+            "es_time": 1776326735559,
+            "publish_date": 1776256155000,
+            "idCreateEntity":
+            {},
+            "rowKey": "37a9cfc696b0c449d186c98526a66dd7",
+            "is_pure_emoji": false
+        }
+    }
+]

@@ -1,0 +1,194 @@
+社媒工具1
+itemId：文章
+title:标题
+content：内容
+url：原文链接
+siteName：站点名称
+primarySiteName：顶级站点名称
+publishTimestamp：发布时间
+author：作者
+keywords：命中关键词 - 根据入参的keywords返回命中该篇文章的关键词
+likeCnt：点赞数
+commentCnt：评论数
+viewCnt：阅读数
+isAd：是否广告
+
+功能描述：该工具用于返回符合特定条件的社交媒体原始帖子内容。
+执行流程：根据入参说明输入关键词及其他条件参数，精确匹配社交媒体**原始帖子**，返回包括作者、内容、点赞数等详细信息。
+参数规范：所有参数必须严格按照定义的枚举类型和格式传递，避免使用非标准值。
+站点名称：siteName或primarySiteName采用模糊匹配的方式
+关键词格式：多个词使用'+'连接表示"且"逻辑；使用'|'代表"或"逻辑。
+排序方式：选择"发布时间倒序"或"发布时间顺序"
+分页参数：pageSize的取值在0～50之间
+
+社媒工具2
+siteName：站点名称
+primarySiteName：顶级站点名称
+formatDate：时间点
+volumeCount：声量
+sentiType:情感类型 - 根据入参的sentiType输出
+
+"data":{
+    "凤凰网":{
+        "凤凰网_a":{
+            "-1":{
+                "20250625": 682,
+                "20250626": 1257
+            },
+            "0":{
+                "20250625": 682,
+                "20250626": 1257
+            },
+            "1":{
+                "20250625": 682,
+                "20250626": 1257
+            }
+        }
+    }
+}
+
+社媒工具3
+功能描述：根据关键词、媒体名称、时间范围，统计不同站点/情感类型的声量分布。：
+- groupBySiteName: 不同站点的声量、声量占比、互动量及互动量占比
+- groupByPrimarySiteName: 不同声量类型的声量、声量占比、互动量及互动量占比，统计声量类型为入参选择的volumeType(声量类型)
+- groupBySentiType: 不同情感类型的声量、声量占比、互动量及互动量占比，统计情感类型为入参选择的sentiType(情感类型)
+执行流程： 根据入参说明输入关键词、时间范围及其他所需的条件参数，返回指定维度的数据分布统计结果。
+参数规范：所有参数必须严格按照定义的枚举类型和格式传递，避免使用非标准值。
+
+groupName：分组名称 - 根据入参的groupBy返回
+siteName：站点名称
+primarySiteName：顶级站点名称
+totalVolumeCount:总声量
+volumeCount：声量
+volumeRate：声量占比
+sentiType：情感类型
+
+
+"data":{
+    "totalVolumeCount":"3702"
+    "groupBySentiment":{
+        "-1":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        },
+        "1":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        },
+        "0":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        }
+    }
+}
+
+"data":{
+    "totalVolumeCount":"3702"
+    "groupBySiteName":{
+        "凤凰网_a":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        },
+        "凤凰网_b":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        },
+        "凤凰网_c":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        }
+    }
+}
+
+{
+  "siteDistribution": [
+    {
+      "siteName": "微博",
+      "volumeCnt": 91705,
+      "volumeRate": 1,
+      "interactionCnt": 2246676,
+      "interactionRate": 1
+    }
+  ],
+  "volumeDistribution": [
+    {
+      "volumeType": "UGC",
+      "volumeCnt": 89414,
+      "volumeRate": 0.9750177198626029,
+      "interactionCnt": 826316,
+      "interactionRate": 0.3677949112377575
+    },
+    {
+      "volumeType": "PGC",
+      "volumeCnt": 2291,
+      "volumeRate": 0.02498228013739709,
+      "interactionCnt": 1420360,
+      "interactionRate": 0.6322050887622426
+    }
+  ],
+  "contentDistribution": [
+    {
+      "contentType": "新闻公关",
+      "volumeCnt": 471,
+      "volumeRate": 0.005136034022136198,
+      "interactionCnt": 46291,
+      "interactionRate": 0.020604217074469126
+    },
+    {
+      "contentType": "其它",
+      "volumeCnt": 1766,
+      "volumeRate": 0.0192574014503026,
+      "interactionCnt": 97863,
+      "interactionRate": 0.04355901785571217
+    }
+  ],
+  "sentimentDistribution": [
+    {
+      "sentiType": "正面",
+      "volumeCnt": 9894,
+      "volumeRate": 0.10788942805735784,
+      "interactionCnt": 745828,
+      "interactionRate": 0.3319695407793558
+    },
+    {
+      "sentiType": "中性",
+      "volumeCnt": 81811,
+      "volumeRate": 0.8921105719426422,
+      "interactionCnt": 1500848,
+      "interactionRate": 0.6680304592206442
+    }
+  ]
+}
+
+社媒工具4
+功能描述：该工具用于获取与指定查询对象相关的关键词，返回TOP N列表，定义如下：
+1. topKeywords: 关键词列表 - 获取TOP N的关键词及其声量
+执行流程： 根据入参说明输入关键词、时间范围及其他所需的条件参数，返回TOP N关键词的统计结果。TOP N的排序方式可选按声量倒序或顺序。
+参数规范：所有参数必须严格按照定义的枚举类型和格式传递，避免使用非标准值。
+
+topKeywords：TOP关键词 - 根据返回文章的"keywords"字段进行统计输出
+siteName：站点名称
+primarySiteName：顶级站点名称
+totalVolumeCount:总声量
+sortType:排序方式 - 返回入参的sortType
+volumeCount：声量
+volumeRate：声量占比
+
+"data":{
+    "totalVolumeCount":"3702"，
+    "sortType":"声量倒序"，
+    "topKeywords":{
+        "keywords_a":{
+            "volumeCount":"1235",
+            "volumeRate":"13%"
+        },
+        "keywords_b":{
+            "volumeCount":"1234",
+            "volumeRate":"12%"
+        },
+        "keywords_c":{
+            "volumeCount":"1234",
+            "volumeRate":"10%"
+        }
+    }
+}
