@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Large data files (exceeds GitHub 100MB limit)
+Temp/微博导数需求/*.csv
+Temp/示例数据/*.csv
+
+# Configuration / caches
+.kilo/
