@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # IDE
 .idea/
@@ -10,6 +13,21 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Local secrets and authentication caches
+.env
+.env.*
+!.env.example
+**/accounts.json
+**/token_cache.json
+**/user_list.json
+config/local/
+
+# Generated data and logs
+data/input/
+data/output/
+outputs/
+*.log
 
 # Large data files (exceeds GitHub 100MB limit)
 Temp/微博导数需求/*.csv

@@ -1,0 +1,5 @@
+# Runtime dependencies used by the standalone scripts.
+elasticsearch>=8.0,<10.0
+openpyxl>=3.1,<4.0
+pandas>=2.0,<3.0
+requests>=2.31,<3.0

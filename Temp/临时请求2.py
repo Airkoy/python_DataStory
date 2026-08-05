@@ -2,17 +2,16 @@ import os
 import requests
 import json
 
-# url = 'http://dc.dev.datastory.com.cn/application/market/job/v1/run'
 url = 'https://dc.datastory.com.cn/application/market/job/v1/run'
+# url = "https://dc.datastory.com.cn/application/market/plugin/job/run" # 自定义站点
 
 headers = {
-    "Content-Type": "application/json",
-    "Authorization": os.environ["DATASTORY_AUTHORIZATION"]
+  "Content-Type": "application/json",
+  "Authorization": os.environ["DATASTORY_AUTHORIZATION"]
 }
 
-# 构建请求体数据
 requestData = {
-    "appId": 121,
+    "appId": 12,
     "exportConfig": {
         "local": {}
     },
@@ -24,40 +23,40 @@ requestData = {
             "POST": 0
         }
     },
-    "jobName": "X关键词国家0608新-re-不传postdelay",
-
+    "jobName": "测试-api创建",
     "scheduleConfig": {
-        "endDataTime": 1779760854000,
+        "endDataTime": 1783908791964,
         "interactionDelayUnit": "d",
-        # "postDelay": 0,
-        "schedStartTime": 1780897834510,
-        "startDataTime": 1779674454000,
+        "postDelay": 0,
+        "schedStartTime": 1783908851964,
+        "startDataTime": 1752459191964,
         "type": "TEMP",
         "useInteractionDefaultDelay": False
     },
-    "scopeId": 105,
-    "sheetName": "0625临时",
+    "scopeId": 6,
+    # "sheetId": 76552,
+    "sheetName":"0625临时",
     "sourceConfig": {
         "condition": [
             {
-                "countries_ori": "美澳大利亚",
                 "filterwords": "",
-                "keywords": "this+that+cool",
-                "name": "分析对象1"
+                "keywords": "新品上市|全新上市|重磅上市",
+                "name": "分析对象1",
+                "uid": "2918373202"
             }
         ],
         "fieldMode": 0,
-        "input": "keyword",
+        "input": "uid",
         "isCoproduce": 0,
         "matchType": [
             "content",
             "title"
         ],
         "output": [
-            "POST"
+            "POST-video#0",
+            "POST-image#0"
         ]
-    },
-
+    }
 }
 
 # 发送POST请求
