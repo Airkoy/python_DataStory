@@ -18,14 +18,14 @@ python3 -m pip install -r requirements.txt
 
 ```bash
 python3 Elasticsearch查询/parse_output.py
-python3 测试中功能/es查询转csv/es_query_to_csv.py \
-  测试中功能/es查询转csv/query_config_sample.json
+python3 003_Testing/es查询转csv/es_query_to_csv.py \
+  003_Testing/es查询转csv/query_config_sample.json
 ```
 
 部分历史脚本仍直接读取当前目录下的 `accounts.json` 或输入文件，运行前需要先进入脚本目录：
 
 ```bash
-cd ds_koy_tools/batch_reload_tasks
+cd 002_ds_koy_tools/batch_reload_tasks
 python3 batch_reload_task.py
 ```
 

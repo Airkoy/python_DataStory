@@ -20,7 +20,7 @@ __pycache__/
 !.env.example
 **/accounts.json
 **/token_cache.json
-**/user_list.json
+**/user_list*.json
 config/local/
 
 # Generated data and logs
